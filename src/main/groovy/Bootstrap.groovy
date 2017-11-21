@@ -1,4 +1,3 @@
-import com.bah.service.GrantService
 import groovy.json.JsonOutput
 
 import static spark.Spark.*
@@ -18,7 +17,7 @@ class Bootstrap {
         def environment = System.getProperty('environment') ?: 'dev'
         def config = loadConfig(environment)
 
-        staticFileLocation('/web')
+        staticFileLocation('/public')
         staticFiles.expireTime(10)
         port(9000)
 
@@ -29,26 +28,6 @@ class Bootstrap {
         }
 
         options "*/*", { req, res ->
-
-        }
-
-        path "/api", {
-
-            get "/status", { req, res ->
-                res.type('application/json')
-                JsonOutput.toJson([
-                        status: 'Online',
-                        statusAt: new Date(),
-                ])
-            }
-
-            path "/v1", {
-                path "/grant", {
-                    get "/list", {req, res ->
-                        return 'list grants'
-                    }
-                }
-            }
 
         }
 
