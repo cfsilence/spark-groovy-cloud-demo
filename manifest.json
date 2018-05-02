@@ -1,0 +1,14 @@
+{
+  "runtime": {
+    "majorVersion": "8"
+  },
+  "type": "web",
+  "command": "java -jar app.jar",
+  "startupTime": "120",
+  "notes": "notes related to release",
+  "mode": "rolling",
+  "home": "/",
+  "healthCheck": {
+    "http-endpoint": "/"
+  }
+}

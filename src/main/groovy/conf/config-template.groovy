@@ -1,5 +1,0 @@
-codes {
-	recursive {
-		foo = 'bar'
-	}
-}
