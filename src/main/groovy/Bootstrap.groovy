@@ -42,7 +42,7 @@ class Bootstrap {
         }
 
 	get "/", { req, res ->
-	    return "hello again from ${environment}"
+	    return "hello again from ${environment}, now deployed from GitHub!"
 	}
 	
 	get "/test", { req, res -> 
